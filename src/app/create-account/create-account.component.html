@@ -1,0 +1,53 @@
+<div class="container">
+  <h2>Create an Account</h2>
+  <p>
+    Please enter the following information to create an account. <br />Please
+    note that items annotated by a * are required. <br />Please note that all
+    the information you provide (asside from you username and password) is
+    public to allow users to communicate about sales.
+  </p>
+
+  <table>
+    <tr style="height: 50px;">
+      <td>*Username:</td>
+      <td><input type="text" id="textinputnewUsername" /></td>
+    </tr>
+    <tr style="height: 50px;">
+      <td>*Password:</td>
+      <td><input type="password" id="textinputnewPassword" /></td>
+    </tr>
+    <tr style="height: 50px;">
+      <td>Public Name:</td>
+      <td><input type="text" id="textinputnewUsername" /></td>
+    </tr>
+    <tr style="height: 50px;">
+      <td>Email:</td>
+      <td><input type="email" id="textinputnewUsername" /></td>
+    </tr>
+    <tr style="height: 50px;">
+      <td>Phone Number:</td>
+      <td><input type="tel" id="textinputnewUsername" /></td>
+    </tr>
+    <tr style="height: 50px;">
+      <td>About You:</td>
+      <td><textarea style="width: 500px;"></textarea></td>
+    </tr>
+    <tr style="height: 50px;">
+      <td></td>
+      <td>
+        <div style="color: red;">
+          *ngIf statement for password or username already in database or not
+          given
+        </div>
+      </td>
+    </tr>
+    <tr style="height: 75px;">
+      <td></td>
+      <td>
+        <button type="button" class="btn btn-primary" style="width: 182px">
+          Create Account and Login
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
