@@ -27,6 +27,7 @@ export class CreateAccountComponent implements OnInit {
     );
     if (this.badInfo != false) {
       //user successfully created an account and should be routed to home page
+      //we are currently unable to implement this :(
     }
   }
 

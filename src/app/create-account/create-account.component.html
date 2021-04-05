@@ -32,10 +32,10 @@
       <td>About You:</td>
       <td><textarea style="width: 500px;" #aboutYou></textarea></td>
     </tr>
-    <tr style="height: 50px;">
+    <tr style="height: 50px;" *ngIf="badInfo">
       <td></td>
       <td>
-        <div style="color: red;" *ngIf="badInfo">
+        <div style="color: red;">
           Sorry, someone has already claimed that username. Please select a different username.
         </div>
       </td>
