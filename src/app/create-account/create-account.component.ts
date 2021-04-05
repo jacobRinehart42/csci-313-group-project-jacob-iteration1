@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { AccountService } from "../account.service";
 
 @Component({
@@ -8,6 +8,7 @@ import { AccountService } from "../account.service";
 })
 export class CreateAccountComponent implements OnInit {
   failedCreation: boolean = false;
+  @Output() outputEvent: EventEmitter<string> = new EventEmitter();
 
   createAccount(
     username: string,
@@ -27,7 +28,9 @@ export class CreateAccountComponent implements OnInit {
     );
     if (this.failedCreation != false) {
       //user successfully created an account and should be routed to home page
-      //we are currently unable to implement this :(
+      //we will implement this latter
+      //output an event for the app component to recive and act upon
+      this.outputEvent.emit(username);
     }
   }
 
