@@ -7,7 +7,7 @@ import { AccountService } from "../account.service";
   styleUrls: ["./create-account.component.css"]
 })
 export class CreateAccountComponent implements OnInit {
-  failedCreation: boolean = false;
+  successfullCreation: boolean = true;
   @Output() outputEvent: EventEmitter<string> = new EventEmitter();
 
   createAccount(
@@ -18,7 +18,7 @@ export class CreateAccountComponent implements OnInit {
     phoneNumber: string,
     aboutYou: string
   ) {
-    this.failedCreation = !this.acctService.addAccount(
+    this.successfullCreation = this.acctService.addAccount(
       username,
       password,
       publicName,
@@ -26,7 +26,7 @@ export class CreateAccountComponent implements OnInit {
       phoneNumber,
       aboutYou
     );
-    if (this.failedCreation != false) {
+    if (this.successfullCreation) {
       //user successfully created an account and should be routed to home page
       //we will implement this latter
       //output an event for the app component to recive and act upon
