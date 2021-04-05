@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class AccountService {
-
   accounts = [
     {
       username: "JimmyJohns64",
@@ -18,7 +17,8 @@ export class AccountService {
       publicName: "JackAnderson",
       email: "jackAnderson@gmail.com",
       phoneNumber: "588-698-2547",
-      aboutYou: "He loves collecting niche items to expand his collection of souvenirs and knickknacks"
+      aboutYou:
+        "He loves collecting niche items to expand his collection of souvenirs and knickknacks"
     },
     {
       username: "DwightSchrute",
@@ -26,7 +26,8 @@ export class AccountService {
       publicName: "nightHawlk",
       email: "weirdFargmer@bing.com",
       phoneNumber: "584-698-2654",
-      aboutYou: "He would like to downsize his collection, and make sure that he gets not only what the item is worth but also ensure that the items end up with someone who appreciates them"
+      aboutYou:
+        "He would like to downsize his collection, and make sure that he gets not only what the item is worth but also ensure that the items end up with someone who appreciates them"
     },
     {
       username: "JohnnyGuitar",
@@ -34,10 +35,28 @@ export class AccountService {
       publicName: "Johnny Guitar",
       email: "johnnyMcgee@alabama.com",
       phoneNumber: "658-624-2547",
-      aboutYou: "He has inherited hundreds of collectable Hummel figurines and Venton glassware from his late mothers' estate. He would like to liquidate these materials and has found difficulty in finding the right place to market his items to interested buyers. "
-    },
-  ]
+      aboutYou:
+        "He has inherited hundreds of collectable Hummel figurines and Venton glassware from his late mothers' estate. He would like to liquidate these materials and has found difficulty in finding the right place to market his items to interested buyers. "
+    }
+  ];
 
-  constructor() { }
+  addAccount(
+    username: string,
+    password: string,
+    publicName: string,
+    email: string,
+    phoneNumber: string,
+    aboutYou: string
+  ) {
+    this.accounts.push({
+      username: username,
+      password: password,
+      publicName: publicName,
+      email: email,
+      phoneNumber: phoneNumber,
+      aboutYou: aboutYou
+    });
+  }
 
+  constructor() {}
 }
