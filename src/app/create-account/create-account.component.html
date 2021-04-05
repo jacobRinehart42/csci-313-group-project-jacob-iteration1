@@ -10,41 +10,40 @@
   <table>
     <tr style="height: 50px;">
       <td>*Username:</td>
-      <td><input type="text" id="textinputnewUsername" /></td>
+      <td><input type="text" id="textinputnewUsername" #username/></td>
     </tr>
     <tr style="height: 50px;">
       <td>*Password:</td>
-      <td><input type="password" id="textinputnewPassword" /></td>
+      <td><input type="password" id="textinputnewPassword" #password/></td>
     </tr>
     <tr style="height: 50px;">
       <td>Public Name:</td>
-      <td><input type="text" id="textinputnewUsername" /></td>
+      <td><input type="text" id="textinputnewUsername" #publicName/></td>
     </tr>
     <tr style="height: 50px;">
       <td>Email:</td>
-      <td><input type="email" id="textinputnewUsername" /></td>
+      <td><input type="email" id="textinputnewUsername" #email/></td>
     </tr>
     <tr style="height: 50px;">
       <td>Phone Number:</td>
-      <td><input type="tel" id="textinputnewUsername" /></td>
+      <td><input type="tel" id="textinputnewUsername" #phoneNumber/></td>
     </tr>
     <tr style="height: 50px;">
       <td>About You:</td>
-      <td><textarea style="width: 500px;"></textarea></td>
+      <td><textarea style="width: 500px;" #aboutYou></textarea></td>
     </tr>
     <tr style="height: 50px;">
       <td></td>
       <td>
-        <div style="color: red;">
-          *ngIf statement for password or username already in database or not
-          given
+        <div style="color: red;" *ngIf="badInfo">
+          Sorry, someone has already claimed that username. Please select a different username.
         </div>
       </td>
     </tr>
     <tr style="height: 75px;">
       <td></td>
       <td>
-        <button type="button" class="btn btn-primary" style="width: 220px">
+        <button type="button" class="btn btn-primary" style="width: 220px" (click) = "createAccount(username.value, password.value, publicName.value, email.value, phoneNumber.value, aboutYou.value)">
           Create Account and Login
         </button>
       </td>

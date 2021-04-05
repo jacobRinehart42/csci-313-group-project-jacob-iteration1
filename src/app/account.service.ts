@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 export class AccountService {
   accounts = [
     {
+      id: 5,
       username: "JimmyJohns64",
       password: "johnlennin",
       publicName: "Jimmy",
@@ -12,6 +13,7 @@ export class AccountService {
       aboutYou: "Im a pizzaria owner"
     },
     {
+      id: 3,
       username: "JackAnderson",
       password: "jackRocx",
       publicName: "JackAnderson",
@@ -21,6 +23,7 @@ export class AccountService {
         "He loves collecting niche items to expand his collection of souvenirs and knickknacks"
     },
     {
+      id: 43,
       username: "DwightSchrute",
       password: "bearsBeatsBattleStarGalactica",
       publicName: "nightHawlk",
@@ -30,6 +33,7 @@ export class AccountService {
         "He would like to downsize his collection, and make sure that he gets not only what the item is worth but also ensure that the items end up with someone who appreciates them"
     },
     {
+      id: 54,
       username: "JohnnyGuitar",
       password: "electricSkado",
       publicName: "Johnny Guitar",
@@ -48,14 +52,77 @@ export class AccountService {
     phoneNumber: string,
     aboutYou: string
   ) {
-    this.accounts.push({
-      username: username,
-      password: password,
-      publicName: publicName,
-      email: email,
-      phoneNumber: phoneNumber,
-      aboutYou: aboutYou
-    });
+    if (this.uniqueUsernameChecker(username)) {
+      this.accounts.push({
+        id: this.uniqueIdGenerator(),
+        username: username,
+        password: this.passwordHasher(password),
+        publicName: publicName,
+        email: email,
+        phoneNumber: phoneNumber,
+        aboutYou: aboutYou
+      });
+      return true;
+    }
+    return false;
+  }
+
+  private passwordHasher(password: string) {
+    return password;
+  }
+
+  private uniqueIdGenerator() {
+    var num = 1;
+    for (var i = 0; i < this.accounts.length; i++) {
+      if (this.accounts[i].id >= num) {
+        num = this.accounts[i].id;
+      }
+    }
+    return ++num;
+  }
+
+  private uniqueUsernameChecker(username: string) {
+    for (var i = 0; i < this.accounts.length; i++) {
+      if (this.accounts[i].username == username) {
+        return false;
+      }
+      return true;
+    }
+  }
+
+  editAccount(
+    id: number,
+    username: string,
+    password: string,
+    publicName: string,
+    email: string,
+    phoneNumber: string,
+    aboutYou: string
+  ) {
+    for (var i = 0; i < this.accounts.length; i++) {
+      if ((this.accounts[i].id = id)) {
+        this.accounts[i] = {
+          id: id,
+          username: username,
+          password: this.passwordHasher(password),
+          publicName: publicName,
+          email: email,
+          phoneNumber: phoneNumber,
+          aboutYou: aboutYou
+        };
+      }
+    }
+  }
+
+  login(username: string, password: string) {
+    for (var i = 0; i < this.accounts.length; i++) {
+      if (this.accounts[i].username == username) {
+        if (this.accounts[i].password == this.passwordHasher(password)) {
+          return this.accounts[i];
+        }
+        return false;
+      }
+    }
   }
 
   constructor() {}
