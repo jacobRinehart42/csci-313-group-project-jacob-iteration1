@@ -7,7 +7,7 @@ import { AccountService } from "../account.service";
   styleUrls: ["./create-account.component.css"]
 })
 export class CreateAccountComponent implements OnInit {
-  badInfo: boolean = false;
+  failedCreation: boolean = false;
 
   createAccount(
     username: string,
@@ -17,7 +17,7 @@ export class CreateAccountComponent implements OnInit {
     phoneNumber: string,
     aboutYou: string
   ) {
-    this.badInfo = !this.acctService.addAccount(
+    this.failedCreation = !this.acctService.addAccount(
       username,
       password,
       publicName,
@@ -25,7 +25,7 @@ export class CreateAccountComponent implements OnInit {
       phoneNumber,
       aboutYou
     );
-    if (this.badInfo != false) {
+    if (this.failedCreation != false) {
       //user successfully created an account and should be routed to home page
       //we are currently unable to implement this :(
     }
