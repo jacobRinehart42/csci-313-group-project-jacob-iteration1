@@ -30,7 +30,7 @@ export class CreateAccountComponent implements OnInit {
       //user successfully created an account and should be routed to home page
       //we will implement this latter
       //output an event for the app component to recive and act upon
-      this.outputEvent.emit(username);
+      this.outputEvent.emit(this.acctService.login(username, password).id + "");
     }
   }
 

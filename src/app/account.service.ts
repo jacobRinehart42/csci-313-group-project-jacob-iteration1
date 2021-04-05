@@ -120,7 +120,15 @@ export class AccountService {
         if (this.accounts[i].password == this.passwordHasher(password)) {
           return this.accounts[i];
         }
-        return false;
+        return {
+          id: 0,
+          username: "FailedLogin",
+          password: "FailedLogin",
+          publicName: "FailedLogin",
+          email: "FailedLogin",
+          phoneNumber: "FailedLogin",
+          aboutYou: "FailedLogin"
+        };
       }
     }
   }
