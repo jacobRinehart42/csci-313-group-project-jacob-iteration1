@@ -1,1 +1,8 @@
-<app-create-account></app-create-account>
+<table *ngIf="userHasSignedIn">
+  <tr>
+    <td>The signed in user is:</td>
+    <td>{{signedInUserAccount.username}}</td>
+  </tr>
+</table>
+
+<app-create-account (outputEvent)="onCreateAccountSuccessfull($event)"></app-create-account>
