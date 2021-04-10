@@ -7,11 +7,12 @@ import { HelloComponent } from './hello.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { AccountService } from './account.service';
 import { RoutingService } from './routing.service';
+import { ItemsService } from './items.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, CreateAccountComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [AccountService, RoutingService]
+  providers: [AccountService, RoutingService, ItemsService]
 })
 export class AppModule { }
