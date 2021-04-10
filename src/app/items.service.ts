@@ -2,6 +2,21 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ItemsService {
+  selectedItem = {
+    itemId: 0,
+    owningUserId: 1,
+    name: "",
+    askingPrice: "",
+    underNegotiation: "",
+    seller: "",
+    nicheMarket: "",
+    tags: "",
+    description: "",
+    dimensions: "",
+    conditionAndAge: "",
+    otherInfo: ""
+  };
+
   items = [
     {
       itemId: 1,
