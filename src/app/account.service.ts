@@ -2,6 +2,16 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class AccountService {
+  signedInUser = {
+    id: 0,
+    username: "null",
+    password: "null",
+    publicName: "null",
+    email: "null",
+    phoneNumber: "null",
+    aboutYou: "null"
+  };
+
   accounts = [
     {
       id: 5,
@@ -62,6 +72,7 @@ export class AccountService {
         phoneNumber: phoneNumber,
         aboutYou: aboutYou
       });
+      this.login(username, password);
       return true;
     }
     return false;
@@ -91,7 +102,6 @@ export class AccountService {
   }
 
   editAccount(
-    id: number,
     username: string,
     password: string,
     publicName: string,
@@ -99,38 +109,39 @@ export class AccountService {
     phoneNumber: string,
     aboutYou: string
   ) {
-    for (var i = 0; i < this.accounts.length; i++) {
-      if ((this.accounts[i].id = id)) {
-        this.accounts[i] = {
-          id: id,
-          username: username,
-          password: this.passwordHasher(password),
-          publicName: publicName,
-          email: email,
-          phoneNumber: phoneNumber,
-          aboutYou: aboutYou
-        };
-      }
-    }
+    this.signedInUser.username = username;
+    this.signedInUser.password = this.passwordHasher(password);
+    this.signedInUser.publicName = publicName;
+    this.signedInUser.email = email;
+    this.signedInUser.phoneNumber = phoneNumber;
+    this.signedInUser.aboutYou = aboutYou;
   }
 
   login(username: string, password: string) {
+    //loop through accounts
     for (var i = 0; i < this.accounts.length; i++) {
+      //if usernames match
       if (this.accounts[i].username == username) {
+        //and pasword is correct
         if (this.accounts[i].password == this.passwordHasher(password)) {
-          return this.accounts[i];
+          this.signedInUser = this.accounts[i];
+          return true;
         }
-        return {
-          id: 0,
-          username: "FailedLogin",
-          password: "FailedLogin",
-          publicName: "FailedLogin",
-          email: "FailedLogin",
-          phoneNumber: "FailedLogin",
-          aboutYou: "FailedLogin"
-        };
       }
     }
+    return false;
+  }
+
+  logout() {
+    this.signedInUser = {
+      id: 0,
+      username: "null",
+      password: "null",
+      publicName: "null",
+      email: "null",
+      phoneNumber: "null",
+      aboutYou: "null"
+    };
   }
 
   constructor() {}
