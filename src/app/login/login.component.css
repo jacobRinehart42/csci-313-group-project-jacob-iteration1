@@ -1,0 +1,46 @@
+button {
+  padding: 15px;
+  font-size: medium;
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  background-color: darkslateblue;
+  color: white;
+}
+
+#label {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  color: #007bff;
+}
+
+p {
+  font-weight: bold;
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.row {
+  width: 100%;
+}
+
+.col try {
+  text-align: right;
+  float: left;
+}
+
+.col test {
+  text-align: left;
+  float: right;
+}
+
+.center {
+  text-align: center;
+}

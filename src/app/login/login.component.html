@@ -1,0 +1,49 @@
+<br>
+
+<h1>Niche Login</h1>
+
+<br>
+<br>
+
+<div class="center">
+  <label id="label" *ngIf="incorrect">Incorrect Login or Password</label>
+</div>
+
+<div class="row">
+
+  <div class="col try">
+
+    <p>Username: </p>
+
+    <br>
+
+    <p>Password: </p>
+
+  </div>
+
+  <div class="col test">
+
+    <input type="text" #User>
+
+    <br>
+    <br>
+    <br>
+
+    <input type="text" #Pass>
+
+  </div>
+
+</div>
+
+<br>
+
+<div class="center">
+
+  <button class="editButton btn btn-primary" type="button" (click)="attemptLogin(User.value, Pass.value)" >Login!</button>
+
+  <br>
+  <br>
+
+  <button class="editButton btn btn-primary" type="button" (click)="switchToCAccount()" >Create Account!</button>
+
+</div>

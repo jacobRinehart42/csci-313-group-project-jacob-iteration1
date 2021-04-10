@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class RoutingService {
-  showLogin: boolean = false;
-  showCreateAccount: boolean = true;
+  showLogin: boolean = true;
+  showCreateAccount: boolean = false;
   showDashboard: boolean = true;
   showSignOut: boolean = false;
   showItems: boolean = false;
@@ -22,7 +22,7 @@ export class RoutingService {
     this.showCreateOrEditItem = false;
   }
 
-  onShowCreateAccount(){
+  onShowCreateAccount() {
     this.showLogin = false;
     this.showCreateAccount = true;
     this.showDashboard = true;
@@ -32,8 +32,6 @@ export class RoutingService {
     this.showSignedInUserInfo = false;
     this.showCreateOrEditItem = false;
   }
-
-  
 
   constructor() {}
 }
