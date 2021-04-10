@@ -26,7 +26,6 @@ export class CreateAccountComponent implements OnInit {
       aboutYou
     );
     if (this.successfullCreation) {
-      
     }
   }
 

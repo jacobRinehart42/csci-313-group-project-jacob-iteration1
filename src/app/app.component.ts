@@ -1,5 +1,6 @@
 import { Component, VERSION } from "@angular/core";
 import { AccountService } from "./account.service";
+import { RoutingService } from "./routing.service";
 
 @Component({
   selector: "my-app",
@@ -11,7 +12,10 @@ export class AppComponent {
 
   accounts = this.acctService.accounts;
 
-  constructor(private acctService: AccountService) {}
+  constructor(
+    private acctService: AccountService,
+    private routService: RoutingService
+  ) {}
 
   ngOnInit() {}
 }
