@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { RoutingService } from "./routing.service";
 
 @Injectable()
 export class AccountService {
@@ -125,6 +126,7 @@ export class AccountService {
         //and pasword is correct
         if (this.accounts[i].password == this.passwordHasher(password)) {
           this.signedInUser = this.accounts[i];
+          this.routService.onLogin();
           return true;
         }
       }
@@ -144,5 +146,5 @@ export class AccountService {
     };
   }
 
-  constructor() {}
+  constructor(public routService: RoutingService) {}
 }

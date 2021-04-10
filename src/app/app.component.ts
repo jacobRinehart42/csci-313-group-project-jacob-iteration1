@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(
     private acctService: AccountService,
-    private routService: RoutingService
+    public routService: RoutingService
   ) {}
 
   ngOnInit() {}
