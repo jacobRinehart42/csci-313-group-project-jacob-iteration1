@@ -8,10 +8,11 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { AccountService } from './account.service';
 import { RoutingService } from './routing.service';
 import { ItemsService } from './items.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, CreateAccountComponent ],
+  declarations: [ AppComponent, HelloComponent, CreateAccountComponent, LoginComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AccountService, RoutingService, ItemsService]
 })

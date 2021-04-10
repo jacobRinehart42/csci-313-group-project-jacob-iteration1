@@ -17,6 +17,8 @@ export class ItemsService {
     otherInfo: ""
   };
 
+  thisUsersItems;
+
   items = [
     {
       itemId: 1,
@@ -69,7 +71,7 @@ export class ItemsService {
         theirItems.push(this.items[i]);
       }
     }
-    return theirItems;
+    this.thisUsersItems = theirItems;
   }
 
   createItem(
