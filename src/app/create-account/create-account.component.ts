@@ -8,7 +8,6 @@ import { AccountService } from "../account.service";
 })
 export class CreateAccountComponent implements OnInit {
   successfullCreation: boolean = true;
-  @Output() outputEvent: EventEmitter<string> = new EventEmitter();
 
   createAccount(
     username: string,
@@ -27,12 +26,7 @@ export class CreateAccountComponent implements OnInit {
       aboutYou
     );
     if (this.successfullCreation) {
-      //user successfully created an account and should be routed to home page
-      //we will implement this latter
-      //output an event for the app component to recive and act upon
-      this.outputEvent.emit(
-        this.acctService.login(username, password).username + ""
-      );
+      
     }
   }
 
