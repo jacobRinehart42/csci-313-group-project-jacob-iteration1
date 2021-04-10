@@ -1,0 +1,71 @@
+<h1>User Information</h1>
+
+<br>
+
+<img src="https://static.thenounproject.com/png/650376-200.png" class="photo" alt="user">
+
+<br>
+
+<div class="row">
+
+  <div class="col try">
+
+    <p>Public Name: </p>
+
+    <p>Email: </p>
+
+    <p>Phone Number: </p>
+
+    <p>About You: </p>
+
+  </div>
+
+  <div class="col test">
+
+    <input type="text" [readOnly]="disableSave" placeholder="Giga Chad" #PName value="{{signedInUser.publicName}}">
+    <br>
+    <br>
+    <input type="text" [readOnly]="disableSave" #Mail placeholder="example@example.com" value="{{tempAccount.email}}">
+    <br>
+    <br>
+    <input type="text" [readOnly]="disableSave" #Phone placeholder="701-555-1234" value="{{tempAccount.phoneNumber}}">
+    <br>
+    <br>
+    <textarea rows="5" cols="50" name="text" [readOnly]="disableSave" placeholder="Here's a dramatic background story" #About value="{{tempAccount.aboutYou}}"></textarea>
+
+  </div>
+
+</div>
+
+<br>
+<br>
+
+<div class="center">
+
+  <button (click)="unDisable()" [disabled]="disableEdit" class="editButton btn btn-primary" type="button"  >Edit!</button>
+  <button [disabled]="disableSave" (click)="save(PName.value, Mail.value, Phone.value, About.value)" type="button" class="btn btn-primary" >Save!</button>
+
+</div>
+
+<br>
+<br>
+
+<div class="links">
+
+  <button class="editButton btn btn-primary" type="button" (click)="switchToPass()" >Change Password</button>
+
+  <br>
+  <br>
+
+  <button class="editButton btn btn-primary" type="button" (click)="switchToCItem()" >Create an Item!</button>
+
+  <br>
+  <br>
+
+  <button class="editButton btn btn-primary" type="button" (click)="switchToMyItems()" >View My Items</button>
+
+  <br>
+  <br>
+  <br>
+
+</div>

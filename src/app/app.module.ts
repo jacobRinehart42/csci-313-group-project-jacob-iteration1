@@ -9,10 +9,11 @@ import { AccountService } from './account.service';
 import { RoutingService } from './routing.service';
 import { ItemsService } from './items.service';
 import { LoginComponent } from './login/login.component';
+import { SignedInUserInfoComponent } from './signed-in-user-info/signed-in-user-info.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, CreateAccountComponent, LoginComponent ],
+  declarations: [ AppComponent, HelloComponent, CreateAccountComponent, LoginComponent, SignedInUserInfoComponent ],
   bootstrap:    [ AppComponent ],
   providers: [AccountService, RoutingService, ItemsService]
 })
