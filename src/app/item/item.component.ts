@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { ItemsService } from "../items.service";
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  selector: "app-item",
+  templateUrl: "./item.component.html",
+  styleUrls: ["./item.component.css"]
 })
 export class ItemComponent implements OnInit {
+  currentItem = {
+    itemId: 0,
+    owningUserId: 1,
+    name: "",
+    askingPrice: "",
+    underNegotiation: "",
+    seller: "",
+    nicheMarket: "",
+    tags: "",
+    description: "",
+    dimensions: "",
+    conditionAndAge: "",
+    otherInfo: ""
+  };
 
-  constructor() { }
+  constructor(private itmService: ItemsService) {}
 
   ngOnInit() {
+    this.currentItem = this.itmService.selectedItem;
   }
-
 }

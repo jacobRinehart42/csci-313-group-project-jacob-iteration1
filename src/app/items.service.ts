@@ -5,16 +5,16 @@ export class ItemsService {
   selectedItem = {
     itemId: 0,
     owningUserId: 1,
-    name: "",
-    askingPrice: "",
-    underNegotiation: "",
-    seller: "",
-    nicheMarket: "",
-    tags: "",
-    description: "",
-    dimensions: "",
-    conditionAndAge: "",
-    otherInfo: ""
+    name: "Default Item",
+    askingPrice: "Default askingPrice",
+    underNegotiation: "Yes/No",
+    seller: "Default Seller",
+    nicheMarket: "Default nicheMarket",
+    tags: "Default tags",
+    description: "Default description",
+    dimensions: "Default dimensions",
+    conditionAndAge: "Default conditionAndAge",
+    otherInfo: "Default otherInfo"
   };
 
   thisUsersItems;
