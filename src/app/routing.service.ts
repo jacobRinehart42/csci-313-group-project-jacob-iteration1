@@ -33,5 +33,16 @@ export class RoutingService {
     this.showCreateOrEditItem = false;
   }
 
+  onShowItems(){
+    this.showLogin = false;
+    this.showCreateAccount = false;
+    this.showDashboard = true;
+    this.showSignOut = false;
+    this.showItems = true;
+    this.showItem = false;
+    this.showSignedInUserInfo = false;
+    this.showCreateOrEditItem = false;
+  }
+
   constructor() {}
 }

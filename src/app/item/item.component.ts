@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ItemsService } from "../items.service";
+import { RoutingService } from "../routing.service";
 
 @Component({
   selector: "app-item",
@@ -22,9 +23,16 @@ export class ItemComponent implements OnInit {
     otherInfo: ""
   };
 
-  constructor(private itmService: ItemsService) {}
+  constructor(
+    private itmService: ItemsService,
+    private routService: RoutingService
+  ) {}
 
   ngOnInit() {
     this.currentItem = this.itmService.selectedItem;
+  }
+
+  onBackToItemsPage() {
+    this.routService.onShowItems();
   }
 }
