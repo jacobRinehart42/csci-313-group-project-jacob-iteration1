@@ -17,7 +17,7 @@ export class ItemsService {
     otherInfo: "Default otherInfo"
   };
 
-  thisUsersItems;
+  thisUsersItems = [];
 
   items = [
     {
@@ -65,7 +65,7 @@ export class ItemsService {
   ];
 
   getAllItemsForUser(id: number) {
-    var theirItems;
+    var theirItems = [];
     for (var i = 0; i < this.items.length; i++) {
       if ((this.items[i].owningUserId = id)) {
         theirItems.push(this.items[i]);
