@@ -1,3 +1,7 @@
 <app-login *ngIf="this.routService.showLogin"></app-login>
 
 <app-create-account *ngIf="this.routService.showCreateAccount"></app-create-account>
+
+<app-item *ngIf="this.routService.showItem"></app-item>
+
+<app-signed-in-user-info *ngIf="this.routService.showSignedInUserInfo"> </app-signed-in-user-info>

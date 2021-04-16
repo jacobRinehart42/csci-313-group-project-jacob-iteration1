@@ -2,12 +2,12 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class RoutingService {
-  showLogin: boolean = true;
+  showLogin: boolean = false;
   showCreateAccount: boolean = false;
   showDashboard: boolean = true;
   showSignOut: boolean = false;
   showItems: boolean = false;
-  showItem: boolean = false;
+  showItem: boolean = true;
   showSignedInUserInfo: boolean = false;
   showCreateOrEditItem: boolean = false;
 
